@@ -95,6 +95,7 @@ class Traitement_connexion extends CI_Controller
                         'firstname' => $row->user_firstname,
                         'mail' => $row->user_mail,
                         'password' => $row->user_password,
+                        'password_verif' => $row->user_password,
                         'type' => $row->user_type,
                         'enigme'=>$row->_enigme_id,
                         'blocage'=>$row->user_blocage

@@ -7,6 +7,30 @@ $this->session->userdata();
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+<style>
+    input {
+        float: left;
+        clear: both;
+        margin-top: 30px;
+    }    
+    .error{
+          color: red;
+        float: left;
+        clear: both;
+
+    }
+
+    span.error {
+        color: red;
+        float: left;
+        clear: both;
+    }
+
+    h2 {
+        clear: both;
+        float: left;
+    }
+</style>
 <body>
     <h1>Votre profil</h1>
     <form action="<?php echo base_url()?>Traitement_profil" method="post">

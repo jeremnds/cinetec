@@ -1,5 +1,7 @@
 <?php
-$this->session->userdata($data);
+$this->session->userdata();
+$this->session->all_userdata();
+
     ?>
 
 
@@ -11,11 +13,6 @@ $this->session->userdata($data);
 </head>
 <body>
    
-   <?php
-    
-    
-    
-    ?>
-    
+    <a href="<?php echo base_url()?>MonCompte">Mon compte</a>
 </body>
 </html>
