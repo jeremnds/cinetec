@@ -6,7 +6,6 @@ class Traitement_profil extends CI_Controller{
         $this->load->library('session');
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
-        $this->output->enable_profiler(TRUE);
         $this->session->userdata();
         
         /** VARIABLE **/
@@ -20,13 +19,13 @@ class Traitement_profil extends CI_Controller{
         
         
         /** REGLE POUR LE FORMULAIRE **/
-        $this->form_validation->set_rules('name', 'Nom', 'trim|required'); /** LE DERNIER CHAMPS CORRESPONDS AUX REGLES **/
+        $this->form_validation->set_rules('name', 'Nom', 'trim'); /** LE DERNIER CHAMPS CORRESPONDS AUX REGLES **/
         
-        $this->form_validation->set_rules('firstname', 'Prenom', 'trim|required');
+        $this->form_validation->set_rules('firstname', 'Prenom', 'trim');
         
-        $this->form_validation->set_rules('password', 'Mot de passe','trim|required');
+        $this->form_validation->set_rules('password', 'Mot de passe','trim');
         
-        $this->form_validation->set_rules('password_verif', 'Confirmation du mot de passe', 'trim|required|matches[password]',  array(
+        $this->form_validation->set_rules('password_verif', 'Confirmation du mot de passe', 'trim|matches[password]',  array(
                 'matches'     => 'Les mots de passes ne correspondent pas',
 
         ));
@@ -37,7 +36,6 @@ class Traitement_profil extends CI_Controller{
                 'min_length'     => "Le pseudo doit être composé de 5 caractères minimum"
         ));
         
-
         /** FIN DES REGLES **/ 
         
    
@@ -47,10 +45,7 @@ class Traitement_profil extends CI_Controller{
                 if ($this->form_validation->run() == FALSE )
                 {
                     $this->load->view('MonCompte_view');
-        
-             
-       
-                  
+                   
                 }
        
                 else
@@ -67,11 +62,6 @@ class Traitement_profil extends CI_Controller{
         $this->session->set_userdata('password', $password);
         $this->session->set_userdata('login', $login); 
         $this->load->view('Traitement_profil_view');
-                    
-                    
-                    echo 'yessos';
-                    
-                    
 
                 }
 
@@ -111,7 +101,7 @@ break;
 } 
      
 elseif($login == $loginsess){
-    return true;
+return true;
 }
   
     }

@@ -1,7 +1,5 @@
 <?php
 $this->session->userdata();
-$this->session->all_userdata();
-
     ?>
 
 
@@ -12,7 +10,7 @@ $this->session->all_userdata();
     <title>Traitement Connexion</title>
 </head>
 <body>
-   
-    <a href="<?php echo base_url()?>MonCompte">Mon compte</a>
+   <h1>Les modifications ont été prises en compte !</h1>
+    <a href="<?php echo base_url()?>MonCompte">Retour à mon compte</a>
 </body>
 </html>

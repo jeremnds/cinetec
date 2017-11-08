@@ -30,9 +30,11 @@ $this->session->userdata();
         clear: both;
         float: left;
     }
+    
+    
 </style>
 <body>
-   <h2>Votre compte est bloqué</h2>
+   <h2 style="color:red">Votre compte est bloqué</h2>
     <h3>Votre profil</h3>
     <form action="<?php echo base_url()?>Traitement_profil" method="post">
         <input type="text" name="name" placeholder="nom" value="<?php echo $_SESSION['name'] ?>">
@@ -55,8 +57,7 @@ $this->session->userdata();
         </form>
         
     <a href="Deconnexion">Deconnexion</a>
-    <?php  print_r($this->session->all_userdata());
- ?>
+
 </body>
 </html>
 
