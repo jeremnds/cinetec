@@ -16,14 +16,7 @@ class Traitement_profil extends CI_Controller{
         $password = $this->input->post('password');
         $login = $this->input->post('login');
         $id= $_SESSION['id'];
-        $mailsess = $_SESSION['mail'];
-        $loginsess = $_SESSION['login'];
-        $reponse = $this->Traitement_profil_model->mailsess($mailsess);
-        $reponse2 = $this->Traitement_profil_model->loginsess($loginsess);
-        $erreur=0;
-        $err=0;
-        $link='?';
-        $message='';
+        
         
         
         /** REGLE POUR LE FORMULAIRE **/
@@ -37,65 +30,26 @@ class Traitement_profil extends CI_Controller{
                 'matches'     => 'Les mots de passes ne correspondent pas',
 
         ));
-        $this->form_validation->set_rules('mail', 'Mail', 'trim|required|valid_email',  array(
+        $this->form_validation->set_rules('mail', 'Mail', 'trim|valid_email|callback_check_mail',  array(
                 'valid_email'     => "L'adresse e-mail doit être valide"
         ));
-        $this->form_validation->set_rules('login', 'Pseudo', 'trim|required|min_length[5]',  array(
+        $this->form_validation->set_rules('login', 'Pseudo', 'trim|min_length[5]|callback_check_login',  array(
                 'min_length'     => "Le pseudo doit être composé de 5 caractères minimum"
         ));
         
-        $this->form_validation->set_message('required', 'Le champs %s est obligatoire'); 
+
         /** FIN DES REGLES **/ 
         
         print_r($this->session->all_userdata());
-          print_r($reponse2);
-        foreach ($reponse as $row){
-              
-if($mail == $row->user_mail) 
-{ 
-echo 'pb mail';
-$erreur=1;
-$message='wrong_login=1&';
-$link=$link.$message;
-break;
-   
-}    
-elseif($mail == $mailsess)
-{ 
-$erreur=0;
-$message='';
-
-}
-
-        }
-      
-foreach ($reponse2 as $row){
-
-if($login == $row->user_login) 
-{ 
-echo 'pb log';
-$err=1;
-$link=$link.'wrong_password=1&';
-    break;
-    
-   
-} 
-     
-elseif($login == $loginsess){
-    $err=0; 
-}
-  
-}
-
 
         
         /** PARTIE OBLIGATOIRE SI LES REGLES NE SONT PAS RESPECTEES (false) bref lol on se comprends sans ça le formulaire ne fonctionne pas **/
            
-                if ($this->form_validation->run() == FALSE || $erreur == 1 || $err == 1)
+                if ($this->form_validation->run() == FALSE )
                 {
                     $this->load->view('MonCompte_view');
         
-                echo 'nn le man';
+             
        
                   
                 }
@@ -125,5 +79,44 @@ elseif($login == $loginsess){
     /** FIN DE LA CHICK **/
          
 }
+    public function check_mail($mail){
+  $mailsess = $_SESSION['mail'];      
+  $reponse = $this->Traitement_profil_model->mailsess($mailsess);      
+        foreach ($reponse as $row){
+              
+if($mail == $row->user_mail) 
+{ 
+$this->form_validation->set_message('check_mail','Cette adresse email est déjà utilisée !');
+return false;
+break;
+   
+}    
+elseif($mail == $mailsess)
+{ 
+
+return true;
+}
+        }
+}
+    public function check_login($login){
+  $loginsess = $_SESSION['login'];
+  $reponse2 = $this->Traitement_profil_model->loginsess($loginsess);      
+        foreach ($reponse2 as $row){
+
+if($login == $row->user_login) 
+{ 
+$this->form_validation->set_message('check_login','Ce pseudo est déjà utilisé !');
+return false;
+break;   
+   
+} 
+     
+elseif($login == $loginsess){
+    return true;
+}
+  
+    }
+    }
+    
 }
     

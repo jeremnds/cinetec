@@ -20,7 +20,7 @@ class Traitement_connexion extends CI_Controller
         $verif_login = $this->Traitement_connexion_model->login($login);
         
         $data['verif_login'] = $verif_login;
-        
+        $blocage = $this->Traitement_connexion_model->block($login);
         $reponse = $this->Traitement_connexion_model->session($login);
         
         $verif_password = $this->Traitement_connexion_model->password($login);
@@ -98,7 +98,8 @@ class Traitement_connexion extends CI_Controller
                         'password_verif' => $row->user_password,
                         'type' => $row->user_type,
                         'enigme'=>$row->_enigme_id,
-                        'blocage'=>$row->user_blocage
+                        'blocage'=>$row->user_blocage,
+                        'loggedin'=> 1
                         
                     );
                     
@@ -110,19 +111,28 @@ class Traitement_connexion extends CI_Controller
                     
                     
                 }
-                
+                 }
+      
                 if($type==0){
                     redirect('MonCompte');
                 }
                 else{
                     echo '<script type="text/javascript">document.location.replace("' . base_url() . 'Accueil_Admin");</script>';
                 }
-            }
+           
             
-            
-            else {
-                echo '<script type="text/javascript">document.location.replace("' . base_url() . 'Validation_Mail");</script>';
-            }
+                      foreach ($blocage as $row){
+                
+                if ($row->user_blocage == 1){
+                    redirect('MonCompteBloque');
+                }
+                else{
+                   redirect('MonCompte');
+                    
+                }
+                
+                }
+
         }
     }
     
