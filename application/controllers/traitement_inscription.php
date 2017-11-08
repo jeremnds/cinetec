@@ -3,7 +3,7 @@ class traitement_inscription extends CI_Controller{
     
     public function index(){
         $this->input->get(); 
-        
+        $this->output->enable_profiler(TRUE);
         $this->load->model('Traitement_inscription_model');
         $this->load->library('session');
         $this->load->helper(array('form', 'url'));
@@ -37,9 +37,17 @@ class traitement_inscription extends CI_Controller{
         $mail = $this->input->post('mail');
         $password = $this->input->post('password');
         $login = $this->input->post('login');
-        
+        $verif = $this->Traitement_inscription_model->verifid($id);
 
-        
+   
+      foreach ($verif as $row){
+            
+       
+   if ($id == $row->user_id){
+       $id=rand(100000000,999999999);
+   }
+
+       }
                 if ($this->form_validation->run() == FALSE)
                 {
 
@@ -63,18 +71,6 @@ class traitement_inscription extends CI_Controller{
         $this->Traitement_inscription_model->create_enigme($id);
               
 
-           /*         $data = array(
-        'login'  => $login,
-        'id'     => $id,
-        'name'   => $name,
-        'firstname' => $firstname,
-        'mail'  => $mail,
-        'password'  => $password,
-        'password_verif'    => $password
-)
-                    
-               
-     $this->session->set_userdata($data); */
        echo '<script type="text/javascript">document.location.replace("'.base_url().'Validation_Mail");</script>';
                     
                     
@@ -83,4 +79,5 @@ class traitement_inscription extends CI_Controller{
     
     }
 }
+
 ?>
