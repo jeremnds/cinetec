@@ -40,8 +40,7 @@ class Traitement_profil extends CI_Controller{
 
         /** FIN DES REGLES **/ 
         
-        print_r($this->session->all_userdata());
-
+   
         
         /** PARTIE OBLIGATOIRE SI LES REGLES NE SONT PAS RESPECTEES (false) bref lol on se comprends sans ça le formulaire ne fonctionne pas **/
            
@@ -119,4 +118,3 @@ elseif($login == $loginsess){
     }
     
 }
-    
