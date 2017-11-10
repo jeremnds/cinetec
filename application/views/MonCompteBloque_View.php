@@ -30,6 +30,7 @@ $this->session->userdata();
         clear: both;
         float: left;
     }
+<<<<<<< HEAD
     table{
         float: left;
         clear: both;
@@ -106,11 +107,24 @@ $this->session->userdata();
     
 <h2>MON COMPTE</h2>
     <form action="<?php echo base_url()?>Traitement_profil_bloque" method="post">
+=======
+    
+    
+</style>
+<body>
+   <h2 style="color:red">Votre compte est bloqué</h2>
+    <h3>Votre profil</h3>
+    <form action="<?php echo base_url()?>Traitement_profil" method="post">
+>>>>>>> 81c5c030de8c99f39e83080f55377ee1b272afe4
         <input type="text" name="name" placeholder="nom" value="<?php echo $_SESSION['name'] ?>">
 <?php echo form_error('name', '<div class="error">', '</div>'); ?>
         <input type="text" name="firstname" placeholder="prenom" value="<?php echo $_SESSION['firstname'] ?>">
         <?php echo form_error('firstname', '<div class="error">', '</div>'); ?>
+<<<<<<< HEAD
         <input type="email" name="mail" placeholder="adresse email" value="<?php echo $_SESSION['mail'] ?>">
+=======
+        <input type="text" name="mail" placeholder="adresse email" value="<?php echo $_SESSION['mail'] ?>">
+>>>>>>> 81c5c030de8c99f39e83080f55377ee1b272afe4
         <?php echo form_error('mail', '<div class="error">', '</div>'); ?>
         <input type="text" name="login" placeholder="login" value="<?php echo $_SESSION['login']; ?>">
         <?php echo form_error('login', '<div class="error">', '</div>'); ?>
@@ -125,9 +139,14 @@ $this->session->userdata();
         <input type="submit">
         </form>
         
+<<<<<<< HEAD
       
     <a href="Deconnexion">Deconnexion</a>
   
+=======
+    <a href="Deconnexion">Deconnexion</a>
+
+>>>>>>> 81c5c030de8c99f39e83080f55377ee1b272afe4
 </body>
 </html>
 

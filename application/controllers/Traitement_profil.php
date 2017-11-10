@@ -6,6 +6,7 @@ class Traitement_profil extends CI_Controller{
         $this->load->library('session');
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
+<<<<<<< HEAD
         
         $this->session->userdata();
         $data['login']=$_SESSION['login'];
@@ -18,6 +19,9 @@ class Traitement_profil extends CI_Controller{
 
 
         
+=======
+        $this->session->userdata();
+>>>>>>> 81c5c030de8c99f39e83080f55377ee1b272afe4
         
         /** VARIABLE **/
         $name = $this->input->post('name');
@@ -48,16 +52,26 @@ class Traitement_profil extends CI_Controller{
         ));
         
         /** FIN DES REGLES **/ 
+<<<<<<< HEAD
         
    
         
+=======
+        
+   
+        
+>>>>>>> 81c5c030de8c99f39e83080f55377ee1b272afe4
         /** PARTIE OBLIGATOIRE SI LES REGLES NE SONT PAS RESPECTEES (false) bref lol on se comprends sans ça le formulaire ne fonctionne pas **/
            
                 if ($this->form_validation->run() == FALSE )
                 {
+<<<<<<< HEAD
                 
                     $this->load->view('MonCompte_view',$data);
                     
+=======
+                    $this->load->view('MonCompte_view');
+>>>>>>> 81c5c030de8c99f39e83080f55377ee1b272afe4
                    
                 }
        

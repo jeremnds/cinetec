@@ -30,7 +30,12 @@ class Traitement_inscription_model extends CI_Model {
     public function create_enigme($id){
         $this->db->query("INSERT INTO `resoudre`(`_user_id`, `_enigme_id`, `enigme_nbessai`, `enigme_temps_passe`) VALUES ($id,1,0,0)");
     }
+<<<<<<< HEAD
         public function verifid($id){
+=======
+    
+    public function verifid($id){
+>>>>>>> 81c5c030de8c99f39e83080f55377ee1b272afe4
        $req= $this->db->query("SELECT user_id FROM user WHERE user_id=$id");
         return $req->result();
     }

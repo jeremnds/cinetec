@@ -3,7 +3,7 @@ class Traitement_inscription extends CI_Controller{
     
     public function index(){
         $this->input->get(); 
-        
+        $this->output->enable_profiler(TRUE);
         $this->load->model('Traitement_inscription_model');
         $this->load->library('session');
         $this->load->helper(array('form', 'url'));
@@ -38,6 +38,7 @@ class Traitement_inscription extends CI_Controller{
         $password = $this->input->post('password');
         $login = $this->input->post('login');
         $verif = $this->Traitement_inscription_model->verifid($id);
+<<<<<<< HEAD
 
            foreach ($verif as $row){
             
@@ -51,6 +52,18 @@ class Traitement_inscription extends CI_Controller{
         
         
         
+=======
+
+   
+      foreach ($verif as $row){
+            
+       
+   if ($id == $row->user_id){
+       $id=rand(100000000,999999999);
+   }
+
+       }
+>>>>>>> 81c5c030de8c99f39e83080f55377ee1b272afe4
                 if ($this->form_validation->run() == FALSE)
                 {
                    
@@ -95,4 +108,5 @@ class Traitement_inscription extends CI_Controller{
     
     }
 }
+
 ?>

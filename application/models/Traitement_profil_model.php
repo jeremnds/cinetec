@@ -26,6 +26,7 @@ class Traitement_profil_model extends CI_Model {
     $query= $this->db->query("SELECT user_login FROM user WHERE user_login<>'$loginsess'");
         return $query->result();
     }
+<<<<<<< HEAD
     public function select_archive($id){
          $query=$this->db->query("SELECT * FROM archive WHERE _user_id=$id ORDER BY _enigme_id ASC");
          return $query->result();
@@ -40,6 +41,8 @@ class Traitement_profil_model extends CI_Model {
          return $query->result();
      }
     
+=======
+>>>>>>> 81c5c030de8c99f39e83080f55377ee1b272afe4
 }
 
 ?>
