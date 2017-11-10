@@ -23,6 +23,10 @@
         return $req->result();
         
      }
+          public function block($login){
+          $req=$this->db->query("SELECT user_blocage FROM user WHERE user_login='$login'");
+         return $req->result();
+     }
  }
 
 ?>

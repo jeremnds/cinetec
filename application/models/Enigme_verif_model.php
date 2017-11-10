@@ -27,8 +27,8 @@
             $this->db->query("INSERT INTO `archive`(`_user_id`, `_enigme_id`, `enigme_nbessai`, `enigme_temps_passe`) VALUES ($id,$enigme_id,$essai,$temps)");
         }
         
-         public function update_user($id,$enigme_id,$essai,$temps){
-            $this->db->query("UPDATE `resoudre` SET `_enigme_id`=$enigme_id,`enigme_nbessai`=$essai,`enigme_temps_passe`=$temps WHERE _user_id=$id");
+         public function update_user($id,$enigme_id,$essai,$temps,$temps_total){
+            $this->db->query("UPDATE `resoudre` SET `_enigme_id`=$enigme_id,`enigme_nbessai`=$essai,`enigme_temps_passe`=$temps,`temps_total`=$temps_total WHERE _user_id=$id");
         }
         public function update_user_blocage($id,$blocage){
             $this->db->query("UPDATE `user` SET `user_blocage`=$blocage WHERE user_id=$id");

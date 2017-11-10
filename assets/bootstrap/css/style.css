@@ -1,0 +1,231 @@
+
+
+.header-container{
+    width: 100%;
+     height: 700px;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+video{
+    width: 100%;
+    position: fixed;
+    z-index: 0;
+}
+
+h1{
+    font-size: 72px;
+    color: white;
+    position: absolute;
+    z-index: 1;
+}
+
+.masque-header{
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    z-index: 1;
+}
+
+section{
+    overflow: auto;
+    position: relative;
+    background-color: white;
+}
+
+.banniere-header{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    top: 10px;
+}
+
+nav{
+    position: absolute;
+    top:0px;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    z-index: 3;
+    text-align: right;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+   
+}
+nav ul{
+    float: right;
+    margin-right: 30px; 
+}
+nav li{
+    list-style-type: none;
+    display: inline-block;
+    color:#1c6c93;
+    background-color: white;
+  
+    line-height: 20px;
+    padding: 4px 35px 4px 35px;
+    margin-left: 40px;
+    border-radius: 5px;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    border:2px solid white;
+    
+}
+nav li:hover{
+    border : 2px solid;
+    transition: all 1s;
+}
+
+#presentation{
+    margin-top: 100px;
+    overflow: auto;
+}
+
+#presentation p,h2{
+    font-family: 'Poiret One', cursive;
+}
+
+#presentation h2{
+    font-size: 50px;
+    text-align: center;
+}
+
+#presentation p{
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+#presentation-icone,#regle-icone{
+   
+    text-align: center;
+    font-family: 'Poiret One',cursive;
+    margin-top: 80px;
+    overflow: auto;
+    font-size: 18px;
+}
+
+#regle-icone{
+    margin-top: 100px;
+}
+#presentation-icone .row,#regle-icone .row {
+    margin-bottom: 30px;
+}
+
+#jouer{
+    margin-top: 100px;
+}
+
+#img-rouage{
+    float: right;
+    margin-right: 0px;
+}
+
+#boutton-jouer{
+    position: absolute;
+    top: 50%;
+     transform: translateY(-50%);
+}
+
+#contact{
+    clear: both;
+    margin-top: 100px;
+}
+#contact .row{
+    margin-bottom: 40px;
+}
+
+#contact input,#contact textarea{
+    padding:10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #faf8f9;
+    border:solid 3px #a3b1c1;
+    font-family: 'Poiret One',cursive;
+}
+#contact input:focus {
+     outline:  none;
+}
+
+#contact h2{
+    text-align: center;
+    margin-bottom: 100px;
+}
+.formulaire{
+    margin-bottom: 80px;
+}
+
+.camera-photo{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.popup{
+    position: fixed;
+    height:650px;
+    top: 50%;
+    margin-top: -325px;
+    z-index: 5;
+    background-color: rgba(28,108,147,0.9);
+    display: none;
+    
+    
+}
+.espace-connexion{
+   
+    height: 500px;
+    top:40%;
+    margin-top: -250px;
+    padding: 10px;
+    
+}
+
+.connexion{
+   
+}
+.inscription{
+   
+}
+.connexion input, .inscription input{
+    padding:5px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    border:solid 2px transparent;
+    font-family: 'Poiret One',cursive;
+    margin-top: 15px;
+     color: black;
+    font-size: 20px;
+    
+    
+}
+.connexion h2,.inscription h2{
+    text-align: center;
+    font-size:40px;
+    color: white;
+    font-weight: bold;
+}
+.connexion input:focus,.inscription input:focus {
+     outline:  none;
+    border:solid 2px #5ad8e0;
+}
+.connexion placeholder{
+    color: red;
+}
+
+.active{
+    display: block;
+}
+
+.closecross{
+    margin-top: 20px;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    
+    
+}
+.espace-connexion a{
+    color: white;
+}

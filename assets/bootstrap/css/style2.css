@@ -1,0 +1,200 @@
+.container-fluid {
+    padding: 0;
+}
+
+.fond {
+    width: 100%;
+}
+
+.fond img {
+    width: 100%;
+}
+
+
+.pellicule2 {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    top: 0;
+}
+
+
+.rectangle {
+    width: 65%;
+    height: 30vw;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 3;
+    position: absolute;
+    top: 15vw;
+    left: 17.5%;
+}
+
+.texte {
+    font-family: 'Poiret One', cursive;
+}
+
+
+#titre h2 {
+    font-size: 5vw;
+    text-align: center;
+    font-weight: bold;
+}
+
+#titre, .indice1 {
+    font-size: 5vw;
+    text-align: left;
+    font-weight: bold;
+}
+
+
+
+body {
+  overflow-y: hidden;
+}
+
+.para {
+    margin-top: 12%;
+    margin-left: 15%;
+    font-size: 1.8vw;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+.next img {
+    width: 7%;
+    float: right;
+    margin-right: 10%;
+    margin-top: 9.3%;
+}
+
+.rep {
+    height: 50px;
+    width: 35%;
+    margin-left: 32.5%;
+    margin-top: 8.4%;
+    font-size: 25px;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+
+}
+
+.next2 img {
+    width: 7%;
+    float: right;
+    margin-right: 10%;
+    margin-top: 4.5%;
+}
+
+.rep2 {
+    height: 50px;
+    width: 35%;
+    margin-left: 32.5%;
+    margin-top: 3.5%;
+    font-size: 25px;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+
+}
+
+.next4 img {
+    width: 7%;
+    float: right;
+    margin-right: 10%;
+    margin-top: 10.2%;
+}
+
+.rep4 {
+    height: 50px;
+    width: 35%;
+    margin-left: 32.5%;
+    margin-top: 9.2%;
+    font-size: 25px;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+
+}
+
+.next3 img {
+    width: 7%;
+    float: right;
+    margin-right: 10%;
+    margin-top: 4.5%;
+}
+
+.rep3 {
+    height: 50px;
+    width: 35%;
+    margin-left: 32.5%;
+    margin-top: 3.5%;
+    font-size: 25px;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+
+}
+
+
+.indice1 {
+    margin-top: 2%;
+    font-size: 2vw;
+    text-align: left;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+.rebus4 {
+    width: 45%;
+    float: left;
+    margin-left: -5%;
+    margin-top: -5%;
+}
+
+.rebus2 {
+    width: 55%;
+    float: left;
+    margin-left: -5%;
+    margin-top: -4%;
+}
+
+.rebus4 p {
+    margin-top: -15%;
+    float: right;
+    margin-right: -70%;
+    font-size: 1.8vw;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+.rebus2 p {
+    margin-top: -15%;
+    float: right;
+    margin-right: -80%;
+    font-size: 1.8vw;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+.en3 p {
+    margin-top: 2%;
+    font-size: 2vw;
+    text-align: left;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+.qsj p {
+    margin-top: 0%;
+    float: left;
+    margin-left: 30%;
+    font-size: 1.7vw;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+.qsj3 p {
+    margin-top: 2.9%;
+    float: left;
+    margin-left: 30%;
+    font-size: 1.7vw;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}

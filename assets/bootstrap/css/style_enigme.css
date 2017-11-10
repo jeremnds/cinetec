@@ -1,0 +1,151 @@
+html,body{
+    width:100%;
+    height: 100%;
+    padding: 0px;
+    padding-left: 0px;
+     padding-right: 0px;
+    
+}
+body{
+   
+     background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+img#pellicule{
+    width: 100%;
+     padding-left: 0px;
+     padding-right: 0px;
+}
+
+#enigme,#reponse{
+    background-color: rgba(255,255,255,0.8);
+    height: 65%;
+    margin-top: 2%;
+    position: relative;
+}
+
+h1{
+    font-family: 'Poiret one';
+    font-size: 40px;
+    text-align: center;
+    
+}
+
+.indice{
+    font-family: 'Poiret one';
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 3%;
+}
+
+.indice h2{
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.indice img{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#enigme input[type=text]{
+    padding: 10px;
+    border-radius:10px;
+    border: none;
+    border:solid 1px transparent;
+    font-family: 'Poiret one';
+    font-weight: bold;
+    position: absolute;
+    bottom: 15%;
+    
+    left: 50%;
+    transform: translateX(-50%);
+  
+    
+}
+
+#enigme input[type=text]:focus{
+    outline: none;
+    border:solid 1px #1c6c93;
+}
+
+.send{
+    background: url('../../../assets/img/fleche.svg');
+    position: absolute;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: auto;
+    bottom: 50px;
+    right: 50px;
+    
+height: 80px;
+}
+
+#reponse p{
+    font-family: 'Poiret one';
+    font-size:20px;
+    font-weight: bold;
+}
+#reponse h2{
+    color : red;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Poiret one';
+    font-weight: bold;
+}
+
+
+#reponse{
+    height: auto;
+}
+/*TELEPHONE*/
+@media screen and (max-width: 1080px) {
+  body{
+    background-image: url('../../../assets/img/enigme_1.jpg');
+     background-size: cover;
+    background-repeat: no-repeat;
+      background-position: center;
+}
+    #enigme input[type=text]{
+        position: relative;
+        float: left;
+        clear: both;
+        display: block;
+        margin-bottom:100px;
+    }
+    .send{
+        height: 450px;
+         
+     
+        position: relative;
+        float: right;
+        clear: both;
+        display: block;
+        
+        
+    }
+    #enigme,#reponse{
+        height: 100%;
+        overflow: auto;
+    }
+    .indice{
+        font-size: 40px;
+        margin-top: 300px;
+    }
+    h1{
+        font-size: 90px;
+    }
+    .indice h2{
+        
+        font-size: 70px;
+    }
+    #enigme input[type=text]{
+        padding: 30px;
+        font-size: 50px;
+        margin-top: 100px;
+    }
+    
+   
+}

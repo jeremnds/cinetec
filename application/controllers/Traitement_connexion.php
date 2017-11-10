@@ -23,11 +23,15 @@ class Traitement_connexion extends CI_Controller
         
         $reponse = $this->Traitement_connexion_model->session($login);
         
+        $blocage = $this->Traitement_connexion_model->block($login);
+        
         $verif_password = $this->Traitement_connexion_model->password($login);
         
         $data['verif_password'] = $verif_password;
         
-        
+        foreach($verif_password as $line){
+            
+        }
         
         
         
@@ -95,33 +99,39 @@ class Traitement_connexion extends CI_Controller
                         'firstname' => $row->user_firstname,
                         'mail' => $row->user_mail,
                         'password' => $row->user_password,
+                        'password_verif' => $row->user_password,
+
                         'type' => $row->user_type,
                         'enigme'=>$row->_enigme_id,
-                        'blocage'=>$row->user_blocage
+                        'blocage'=>$row->user_blocage,
+                        'loggedin'=>1
                         
                     );
                     
-                    $this->session->set_userdata($data);
-                    
-                    
-                    
-                    
+                    $this->session->set_userdata($data);   
                     
                     
                 }
+                                foreach ($blocage as $row){
                 
-                if($type==0){
-                    redirect('MonCompte');
+                if ($row->user_blocage != 0){
+                    redirect('MonCompteBloque');
                 }
                 else{
-                    echo '<script type="text/javascript">document.location.replace("' . base_url() . 'Accueil_Admin");</script>';
+                   redirect('MonCompte');
+                    
                 }
+                                    
+                
+                }
+                
+      
+                
+            
             }
             
+          
             
-            else {
-                echo '<script type="text/javascript">document.location.replace("' . base_url() . 'Validation_Mail");</script>';
-            }
         }
     }
     

@@ -1,5 +1,7 @@
 <?php
-$this->session->userdata($data);
+$this->session->userdata();
+
+
     ?>
 
 
@@ -7,15 +9,10 @@ $this->session->userdata($data);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Traitement Connexion</title>
+    <title>Traitement Profil</title>
 </head>
 <body>
-   
-   <?php
-    
-    
-    
-    ?>
-    
+   <h1>Les modifications ont bien été prises en compte !</h1>
+    <a href="<?php echo base_url()?>MonCompteBloque">Mon compte</a>
 </body>
 </html>

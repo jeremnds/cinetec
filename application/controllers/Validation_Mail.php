@@ -4,6 +4,8 @@
         
         public function index(){
             $this->load->view('Validation_Mail_View');
+          
+            
         }
     }
 ?>

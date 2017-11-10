@@ -1,5 +1,5 @@
 <?php 
-class traitement_inscription extends CI_Controller{
+class Traitement_inscription extends CI_Controller{
     
     public function index(){
         $this->input->get(); 
@@ -37,13 +37,37 @@ class traitement_inscription extends CI_Controller{
         $mail = $this->input->post('mail');
         $password = $this->input->post('password');
         $login = $this->input->post('login');
-        
+        $verif = $this->Traitement_inscription_model->verifid($id);
 
+           foreach ($verif as $row){
+            
+       
+   if ($id == $row->user_id){
+       $id=rand(100000000,999999999);
+   }
+
+       }
+           
+        
+        
         
                 if ($this->form_validation->run() == FALSE)
                 {
+                   
 
-        $this->load->view('Accueil_View');
+                    function verif_get($get){
+        
+        if(!empty($_GET[$get])){
+            $get=$_GET[$get];
+        
+        }
+        else {
+            $get=0;
+        }
+        return $get;
+        
+    }
+        $this->load->view('Accueil_connexion_active_View');
                 }
                 else
                 {
@@ -63,18 +87,6 @@ class traitement_inscription extends CI_Controller{
         $this->Traitement_inscription_model->create_enigme($id);
               
 
-           /*         $data = array(
-        'login'  => $login,
-        'id'     => $id,
-        'name'   => $name,
-        'firstname' => $firstname,
-        'mail'  => $mail,
-        'password'  => $password,
-        'password_verif'    => $password
-)
-                    
-               
-     $this->session->set_userdata($data); */
        echo '<script type="text/javascript">document.location.replace("'.base_url().'Validation_Mail");</script>';
                     
                     
